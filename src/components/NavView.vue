@@ -3,8 +3,9 @@
 
 <template>
   <nav>
-    <RouterLink class="navbar-brand" to="/">Home</RouterLink>
-    <RouterLink class="nav-link" to="/guid">Guid</RouterLink>
+    <RouterLink to="/">Home</RouterLink>
+    <RouterLink to="/base64">Base64</RouterLink>
+    <RouterLink to="/guid">Guid</RouterLink>
   </nav>
 </template>
 
