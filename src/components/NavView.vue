@@ -10,10 +10,13 @@
 
 <style scoped lang="scss">
 nav {
+  background-color: black;
   padding: 1rem;
 
   a {
     margin-right: 0.5rem;
+    color: white;
+    text-decoration: none;
   }
 
   a:last-child {
