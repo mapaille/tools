@@ -3,25 +3,26 @@
 
 <template>
   <nav>
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/base64">Base64</RouterLink>
-    <RouterLink to="/guid">Guid</RouterLink>
+    <RouterLink to="/">HOME</RouterLink>
+    <RouterLink to="/base64">BASE64</RouterLink>
+    <RouterLink to="/guid">GUID</RouterLink>
   </nav>
 </template>
 
 <style scoped lang="scss">
 nav {
   background-color: black;
-  padding: 1rem;
+  display: flex;
 
   a {
-    margin-right: 0.5rem;
+    padding: 1rem;
+    font-size: 1rem;
     color: white;
     text-decoration: none;
-  }
 
-  a:last-child {
-    margin-right: 0;
+    &:hover {
+      background-color: #333;
+    }
   }
 }
 </style>

@@ -1,11 +1,7 @@
 <script setup lang="ts">
-  import { reactive } from 'vue'
+  import { ref } from 'vue'
 
-  class GUID {
-    value: String = generateGUID();
-  }
-
-  const guid = reactive(new GUID())
+  const guid = ref<string>(generateGUID());
 
   function regenerateGUID(): void {
     guid.value = generateGUID();
@@ -25,9 +21,12 @@
 </script>
 
 <template>
-  <p>{{ guid.value }}</p>
-  <button @click="regenerateGUID">Regenerate</button>
-  <button @click="copyToClipboard">Copy</button>
+  <h3>Value</h3>
+  <div class="flex">
+    <input readonly type="text" v-model="guid" />
+    <button @click="regenerateGUID">Regenerate</button>
+    <button @click="copyToClipboard">Copy</button>
+  </div>
 </template>
 
 <style scoped lang="scss">

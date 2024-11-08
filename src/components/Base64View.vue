@@ -15,11 +15,15 @@ const toBase64 = (): void => {
 
 <template>
   <h3>Plain</h3>
-  <input type="text" v-model="from" />
-  <button @click="toBase64">Convert</button>
+  <div class="flex">
+    <input type="text" v-model="from" />
+    <button @click="toBase64">Convert</button>
+  </div>
   <h3>Base64</h3>
-  <input type="text" v-model="to" />
-  <button @click="fromBase64">Convert</button>
+  <div class="flex">
+    <input type="text" v-model="to" />
+    <button @click="fromBase64">Convert</button>
+  </div>
 </template>
 
 <style scoped lang="scss">
