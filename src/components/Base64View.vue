@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import FlexContainer from './FlexContainer.vue';
 
 const from = ref<string>('');
 const to = ref<string>('');
@@ -15,15 +16,15 @@ const toBase64 = (): void => {
 
 <template>
   <h3>Plain</h3>
-  <div class="flex">
+  <FlexContainer>
     <input type="text" v-model="from" />
     <button @click="toBase64">Convert</button>
-  </div>
+  </FlexContainer>
   <h3>Base64</h3>
-  <div class="flex">
+  <FlexContainer>
     <input type="text" v-model="to" />
     <button @click="fromBase64">Convert</button>
-  </div>
+  </FlexContainer>
 </template>
 
 <style scoped lang="scss">
