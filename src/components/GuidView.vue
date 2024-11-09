@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { ref } from 'vue'
-  import FlexContainer from './FlexContainer.vue';
+  import SectionContainer from './SectionContainer.vue';
 
   const guid = ref<string>(generateGUID());
 
@@ -22,12 +22,11 @@
 </script>
 
 <template>
-  <h3>Value</h3>
-  <FlexContainer>
+  <SectionContainer title="Value">
     <input readonly type="text" v-model="guid" />
     <button @click="regenerateGUID">Regenerate</button>
     <button @click="copyToClipboard">Copy</button>
-  </FlexContainer>
+  </SectionContainer>
 </template>
 
 <style scoped lang="scss">
