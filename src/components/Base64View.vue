@@ -16,11 +16,11 @@ const toBase64 = (): void => {
 
 <template>
   <SectionContainer title="Plain">
-    <input type="text" v-model="from" />
+    <input type="text" v-model="from" name="from" />
     <button @click="toBase64">Convert</button>
   </SectionContainer>
   <SectionContainer title="Base64">
-    <input type="text" v-model="to" />
+    <input type="text" v-model="to" name="to" />
     <button @click="fromBase64">Convert</button>
   </SectionContainer>
 </template>

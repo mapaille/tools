@@ -23,7 +23,7 @@
 
 <template>
   <SectionContainer title="Value">
-    <input readonly type="text" v-model="guid" />
+    <input readonly type="text" v-model="guid" name="value" />
     <button @click="regenerateGUID">Regenerate</button>
     <button @click="copyToClipboard">Copy</button>
   </SectionContainer>
