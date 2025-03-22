@@ -11,7 +11,7 @@
 
 <style scoped lang="scss">
 nav {
-  background-color: black;
+  background-color: rgb(15, 155, 143);
   display: flex;
 
   a {
@@ -21,7 +21,7 @@ nav {
     text-decoration: none;
 
     &:hover {
-      background-color: #333;
+      background-color: #00000023;
     }
   }
 }
