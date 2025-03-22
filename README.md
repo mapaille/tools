@@ -2,9 +2,9 @@
 
 This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
+## Recommended Development Setup
 
-[Volta](https://volta.sh/) + [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+[Volta](https://volta.sh/) + [VSCode](https://code.visualstudio.com/) + [Vue volar extension](https://marketplace.visualstudio.com/items?itemName=Vue.volar).
 
 ## Type Support for `.vue` Imports in TS
 
