@@ -1,53 +1,58 @@
 import { ref } from 'vue';
 import SectionContainer from './SectionContainer.vue';
-const guid = ref(generateGUID());
-function regenerateGUID() {
-    guid.value = generateGUID();
-}
-;
-async function copyToClipboard() {
-    await navigator.clipboard.writeText(guid.value.toString());
-}
-;
-function generateGUID() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-        var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
-        return v.toString(16);
-    });
-}
+const from = ref('');
+const to = ref('');
+const fromBase64 = () => {
+    from.value = atob(to.value);
+};
+const toBase64 = () => {
+    to.value = btoa(from.value);
+};
 debugger;
 const __VLS_ctx = {};
 let __VLS_components;
 let __VLS_directives;
 ;
 const __VLS_0 = __VLS_asFunctionalComponent(SectionContainer, new SectionContainer({
-    title: "Value",
+    title: "Plain",
 }));
 const __VLS_1 = __VLS_0({
-    title: "Value",
+    title: "Plain",
 }, ...__VLS_functionalComponentArgsRest(__VLS_0));
-var __VLS_3 = {};
 __VLS_2.slots.default;
 __VLS_asFunctionalElement(__VLS_intrinsicElements.input)({
-    readonly: true,
     type: "text",
-    value: (__VLS_ctx.guid),
+    value: (__VLS_ctx.from),
 });
 __VLS_asFunctionalElement(__VLS_intrinsicElements.button, __VLS_intrinsicElements.button)({
-    ...{ onClick: (__VLS_ctx.regenerateGUID) },
-});
-__VLS_asFunctionalElement(__VLS_intrinsicElements.button, __VLS_intrinsicElements.button)({
-    ...{ onClick: (__VLS_ctx.copyToClipboard) },
+    ...{ onClick: (__VLS_ctx.toBase64) },
 });
 var __VLS_2;
+;
+const __VLS_3 = __VLS_asFunctionalComponent(SectionContainer, new SectionContainer({
+    title: "Base64",
+}));
+const __VLS_4 = __VLS_3({
+    title: "Base64",
+}, ...__VLS_functionalComponentArgsRest(__VLS_3));
+__VLS_5.slots.default;
+__VLS_asFunctionalElement(__VLS_intrinsicElements.input)({
+    type: "text",
+    value: (__VLS_ctx.to),
+});
+__VLS_asFunctionalElement(__VLS_intrinsicElements.button, __VLS_intrinsicElements.button)({
+    ...{ onClick: (__VLS_ctx.fromBase64) },
+});
+var __VLS_5;
 var __VLS_dollars;
 const __VLS_self = (await import('vue')).defineComponent({
     setup() {
         return {
             SectionContainer: SectionContainer,
-            guid: guid,
-            regenerateGUID: regenerateGUID,
-            copyToClipboard: copyToClipboard,
+            from: from,
+            to: to,
+            fromBase64: fromBase64,
+            toBase64: toBase64,
         };
     },
 });
@@ -57,4 +62,4 @@ export default (await import('vue')).defineComponent({
     },
 });
 ;
-//# sourceMappingURL=GuidView.vue.js.map
+//# sourceMappingURL=Base64View.vue.js.map
