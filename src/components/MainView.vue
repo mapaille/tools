@@ -7,7 +7,7 @@
   </main>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
   main {
     padding: 1rem;
   }

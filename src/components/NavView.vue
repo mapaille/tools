@@ -9,7 +9,7 @@
   </nav>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 nav {
   background-color: rgb(15, 155, 143);
   display: flex;

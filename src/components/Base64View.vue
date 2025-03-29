@@ -25,5 +25,5 @@ const toBase64 = (): void => {
   </SectionContainer>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 </style>

@@ -32,6 +32,7 @@ __VLS_asFunctionalElement(__VLS_intrinsicElements.input)({
     readonly: true,
     type: "text",
     value: (__VLS_ctx.guid),
+    name: "value",
 });
 __VLS_asFunctionalElement(__VLS_intrinsicElements.button, __VLS_intrinsicElements.button)({
     ...{ onClick: (__VLS_ctx.regenerateGUID) },

@@ -7,7 +7,7 @@
     </div>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
     div {
         display: flex;
         gap: 0.5rem;

@@ -23,6 +23,7 @@ __VLS_2.slots.default;
 __VLS_asFunctionalElement(__VLS_intrinsicElements.input)({
     type: "text",
     value: (__VLS_ctx.from),
+    name: "from",
 });
 __VLS_asFunctionalElement(__VLS_intrinsicElements.button, __VLS_intrinsicElements.button)({
     ...{ onClick: (__VLS_ctx.toBase64) },
@@ -39,6 +40,7 @@ __VLS_5.slots.default;
 __VLS_asFunctionalElement(__VLS_intrinsicElements.input)({
     type: "text",
     value: (__VLS_ctx.to),
+    name: "to",
 });
 __VLS_asFunctionalElement(__VLS_intrinsicElements.button, __VLS_intrinsicElements.button)({
     ...{ onClick: (__VLS_ctx.fromBase64) },
