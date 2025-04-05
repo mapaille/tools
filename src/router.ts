@@ -1,4 +1,4 @@
-import { createMemoryHistory, createRouter } from 'vue-router'
+import { createMemoryHistory, createRouter, createWebHistory } from 'vue-router'
 
 import HomeView from './components/HomeView.vue'
 import Base64View from './components/Base64View.vue'
@@ -13,8 +13,8 @@ const routes = [
 ];
   
 const router = createRouter({
-    history: createMemoryHistory(),
-    routes,
+    history: createWebHistory(),
+    routes
 });
 
 export default router;
