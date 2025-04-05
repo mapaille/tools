@@ -1,4 +1,4 @@
-import { createMemoryHistory, createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 import HomeView from './components/HomeView.vue'
 import Base64View from './components/Base64View.vue'
