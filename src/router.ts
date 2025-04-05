@@ -3,11 +3,13 @@ import { createMemoryHistory, createRouter } from 'vue-router'
 import HomeView from './components/HomeView.vue'
 import Base64View from './components/Base64View.vue'
 import GuidView from './components/GuidView.vue'
+import SqlView from './components/SqlView.vue'
 
 const routes = [
     { path: '/', component: HomeView },
     { path: '/base64', component: Base64View },
-    { path: '/guid', component: GuidView }
+    { path: '/guid', component: GuidView },
+    { path: '/sql', component: SqlView }
 ];
   
 const router = createRouter({

@@ -6,6 +6,7 @@
     <RouterLink to="/">HOME</RouterLink>
     <RouterLink to="/base64">BASE64</RouterLink>
     <RouterLink to="/guid">GUID</RouterLink>
+    <RouterLink to="/sql">SQL</RouterLink>
   </nav>
 </template>
 
