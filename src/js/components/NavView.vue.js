@@ -33,6 +33,16 @@ const __VLS_10 = __VLS_9({
 }, ...__VLS_functionalComponentArgsRest(__VLS_9));
 __VLS_11.slots.default;
 var __VLS_11;
+const __VLS_12 = {}.RouterLink;
+;
+const __VLS_13 = __VLS_asFunctionalComponent(__VLS_12, new __VLS_12({
+    to: "/sql",
+}));
+const __VLS_14 = __VLS_13({
+    to: "/sql",
+}, ...__VLS_functionalComponentArgsRest(__VLS_13));
+__VLS_15.slots.default;
+var __VLS_15;
 var __VLS_dollars;
 const __VLS_self = (await import('vue')).defineComponent({
     setup() {
