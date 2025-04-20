@@ -33,7 +33,3 @@ npx npm-check-updates
 ```sh
 npx npm-check-updates -u
 ```
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
