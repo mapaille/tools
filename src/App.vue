@@ -10,5 +10,24 @@ import NavView from './components/NavView.vue';
   <MainView />
 </template>
 
-<style scoped lang="scss">
+<style>
+
+* {
+    border: none;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+}
+
+button, input {
+    font-size: 1rem;
+    padding: 0.5rem;
+
+    &:hover {
+        background-color: rgb(217, 231, 248);
+    }
+}
+
 </style>
