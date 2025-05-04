@@ -11,7 +11,7 @@ const routes = [
     { path: '/guid', component: GuidView },
     { path: '/sql', component: SqlView }
 ];
-  
+
 const router = createRouter({
     history: createWebHistory(),
     routes
