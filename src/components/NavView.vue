@@ -12,7 +12,7 @@
 
 <style scoped>
 nav {
-  background-color: rgb(15, 155, 143);
+  background-color: var(--color-primary);
   display: flex;
 
   a {
@@ -22,7 +22,7 @@ nav {
     text-decoration: none;
 
     &:hover {
-      background-color: #00000023;
+      background-color: var(--color-secondary);
     }
   }
 }

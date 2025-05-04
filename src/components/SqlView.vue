@@ -1,12 +1,16 @@
 <script setup lang="ts">
+import SectionContainer from './SectionContainer.vue';
+import VerticalLayout from './VerticalLayout.vue';
+
 </script>
 
 <template>
+
+<VerticalLayout>
   <h3>SQL</h3>
-  <h4>
-    How to find query id from query text
-  </h4>
-  <pre wrap>
+
+  <SectionContainer title="How to find query id from query text">
+    <pre wrap>
 SELECT 
     qsq.query_id,
     qsq.last_execution_time,
@@ -17,9 +21,9 @@ FROM sys.query_store_query qsq
 WHERE
     qsqt.query_sql_text LIKE '%your query text%';
   </pre>
-  <h4>
-    How to find unused indexes
-  </h4>
+  </SectionContainer>
+
+<SectionContainer title="How to find unused indexes">
   <pre wrap>
 SELECT
     objects.name AS Table_name,
@@ -41,13 +45,10 @@ WHERE
 ORDER BY
     dm_db_index_usage_stats.user_updates DESC;
   </pre>
+</SectionContainer>
+</VerticalLayout>
+
 </template>
 
 <style scoped>
-    pre {
-        padding: 1rem;
-        background-color: rgb(245, 245, 245);
-        border-width: 0.1rem;
-        border-style: dashed;
-    }
 </style>

@@ -11,23 +11,31 @@ import NavView from './components/NavView.vue';
 </template>
 
 <style>
+:root {
+  --color-primary: black;
+  --color-secondary: darkblue;
+  --color-light: #F8F8F8;
 
-* {
-    border: none;
-    text-decoration: none;
+  --layout-gap: 0.5rem;
 }
 
 body {
     margin: 0;
 }
 
+button {
+  background-color: var(--color-primary);
+  color: white;
+  border-style: none;
+
+  &:hover {
+    background-color: var(--color-secondary);
+  }
+}
+
 button, input {
     font-size: 1rem;
-    padding: 0.5rem;
-
-    &:hover {
-        background-color: rgb(217, 231, 248);
-    }
+    padding: 0.3rem;
 }
 
 </style>

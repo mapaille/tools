@@ -1,6 +1,8 @@
 <script setup lang="ts">
   import { ref } from 'vue'
   import SectionContainer from './SectionContainer.vue';
+import HorizontalLayout from './HorizontalLayout.vue';
+import VerticalLayout from './VerticalLayout.vue';
 
   const guid = ref<string>(generateGUID());
 
@@ -22,11 +24,18 @@
 </script>
 
 <template>
-  <SectionContainer title="Value">
-    <input readonly type="text" v-model="guid" name="value" />
+<VerticalLayout>
+  <h3>GUID</h3>
+  <SectionContainer title="Generation">
+    <HorizontalLayout>
+      <input readonly type="text" v-model="guid" name="value" />
     <button @click="regenerateGUID">Regenerate</button>
     <button @click="copyToClipboard">Copy</button>
+    </HorizontalLayout>
   </SectionContainer>
+</VerticalLayout>
+
+
 </template>
 
 <style scoped>

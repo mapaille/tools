@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import FlexContainer from './FlexContainer.vue';
 
 const props = defineProps<{
   title: string
@@ -7,11 +6,22 @@ const props = defineProps<{
 </script>
 
 <template>
-    <h3>{{ props.title }}</h3>
-    <FlexContainer>
-        <slot></slot>
-    </FlexContainer>
+  <section>
+      <h3>{{ props.title }}</h3>
+      <slot></slot>
+  </section>
 </template>
 
 <style scoped>
+  section {
+    padding: 0.5rem;
+    background-color: var(--color-light);
+    border-width: 0.1rem;
+    border-style: dashed;
+
+    h3 {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
 </style>
