@@ -20,7 +20,7 @@ const toBase64 = (): void => {
   <VerticalLayout>
     <h3>BASE64</h3>
 
-      <SectionContainer title="Conversion">
+      <SectionContainer title="Encoding">
         <VerticalLayout>
           <HorizontalLayout>
           <input type="text" v-model="from" name="from" placeholder="Raw" />
