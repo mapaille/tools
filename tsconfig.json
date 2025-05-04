@@ -6,6 +6,7 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "outDir": "./src/js",
+    "types": ["vite/client"],
     "isolatedModules": true,
     "strict": true,
     "noUnusedLocals": true,
