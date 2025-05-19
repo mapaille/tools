@@ -1,15 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import HomeView from './components/HomeView.vue'
-import Base64View from './components/Base64View.vue'
-import GuidView from './components/GuidView.vue'
-import SqlView from './components/SqlView.vue'
+import HomePage from './pages/HomePage.vue'
+import Base64Page from './pages/Base64Page.vue'
+import GuidPage from './pages/GuidPage.vue'
+import SqlPage from './pages/SqlPage.vue'
 
 const routes = [
-    { path: '/', component: HomeView },
-    { path: '/base64', component: Base64View },
-    { path: '/guid', component: GuidView },
-    { path: '/sql', component: SqlView }
+    { path: '/', component: HomePage },
+    { path: '/base64', component: Base64Page },
+    { path: '/guid', component: GuidPage },
+    { path: '/sql', component: SqlPage }
 ];
 
 const router = createRouter({

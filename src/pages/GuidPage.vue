@@ -1,8 +1,8 @@
 <script setup lang="ts">
   import { ref } from 'vue'
-  import SectionContainer from './SectionContainer.vue';
-import HorizontalLayout from './HorizontalLayout.vue';
-import VerticalLayout from './VerticalLayout.vue';
+  import SectionContainer from '../components/SectionContainer.vue';
+  import HorizontalLayout from '../components/HorizontalLayout.vue';
+  import VerticalLayout from '../components/VerticalLayout.vue';
 
   const guid = ref<string>(generateGUID());
 
