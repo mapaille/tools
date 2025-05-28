@@ -12,7 +12,7 @@ import NavView from './components/NavView.vue';
 
 <style>
 :root {
-  --color-primary: black;
+  --color-primary: green;
   --color-secondary: darkblue;
   --color-light: #F8F8F8;
 
