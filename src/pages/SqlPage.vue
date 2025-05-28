@@ -1,6 +1,5 @@
 <script setup lang="ts">
   import SectionContainer from '../components/SectionContainer.vue';
-  import VerticalLayout from '../components//VerticalLayout.vue';
 </script>
 
 <template>

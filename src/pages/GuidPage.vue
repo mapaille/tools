@@ -2,7 +2,6 @@
   import { ref } from 'vue'
   import SectionContainer from '../components/SectionContainer.vue';
   import HorizontalLayout from '../components/HorizontalLayout.vue';
-  import VerticalLayout from '../components/VerticalLayout.vue';
 
   const guid = ref<string>(generateGUID());
 

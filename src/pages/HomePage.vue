@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import VerticalLayout from '../components/VerticalLayout.vue';
 </script>
 
 <template>
