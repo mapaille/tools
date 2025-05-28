@@ -17,24 +17,19 @@
 </script>
 
 <template>
-  <VerticalLayout>
-    <h3>BASE64</h3>
-
-      <SectionContainer title="Encoding">
-        <VerticalLayout>
-          <HorizontalLayout>
-          <input type="text" v-model="from" name="from" placeholder="Raw" />
-          <button @click="toBase64">Encode</button>
-        </HorizontalLayout>
-        <HorizontalLayout>
-      <input type="text" v-model="to" name="to" placeholder="Encoded" />
-      <button @click="fromBase64">Decode</button>
-    </HorizontalLayout>
-        </VerticalLayout>
-
+  <h2>BASE64</h2>
+  <SectionContainer title="Encoding">
+    <VerticalLayout>
+      <HorizontalLayout>
+        <input type="text" v-model="from" name="from" placeholder="Raw" />
+        <button @click="toBase64">Encode</button>
+      </HorizontalLayout>
+      <HorizontalLayout>
+        <input type="text" v-model="to" name="to" placeholder="Encoded" />
+        <button @click="fromBase64">Decode</button>
+      </HorizontalLayout>
+    </VerticalLayout>
   </SectionContainer>
-
-  </VerticalLayout>
 </template>
 
 <style scoped>

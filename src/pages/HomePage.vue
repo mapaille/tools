@@ -3,9 +3,7 @@
 </script>
 
 <template>
-  <VerticalLayout>
-    <h3>HOME</h3>
-  </VerticalLayout>
+  <h2>HOME</h2>
 </template>
 
 <style scoped>

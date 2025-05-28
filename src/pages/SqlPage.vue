@@ -4,10 +4,7 @@
 </script>
 
 <template>
-
-<VerticalLayout>
-  <h3>SQL</h3>
-
+  <h2>SQL</h2>
   <SectionContainer title="How to find query id from query text">
     <pre wrap>
 SELECT 
@@ -21,7 +18,6 @@ WHERE
     qsqt.query_sql_text LIKE '%your query text%';
   </pre>
   </SectionContainer>
-
 <SectionContainer title="How to find unused indexes">
   <pre wrap>
 SELECT
@@ -45,8 +41,6 @@ ORDER BY
     dm_db_index_usage_stats.user_updates DESC;
   </pre>
 </SectionContainer>
-</VerticalLayout>
-
 </template>
 
 <style scoped>

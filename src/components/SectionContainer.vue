@@ -18,6 +18,7 @@ const props = defineProps<{
     background-color: var(--color-light);
     border-width: 0.1rem;
     border-style: dashed;
+    margin-bottom: 1rem;
 
     h3 {
       margin-top: 0.5rem;

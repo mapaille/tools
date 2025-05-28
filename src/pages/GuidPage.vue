@@ -24,8 +24,7 @@
 </script>
 
 <template>
-<VerticalLayout>
-  <h3>GUID</h3>
+  <h2>GUID</h2>
   <SectionContainer title="Generation">
     <HorizontalLayout>
       <input readonly type="text" v-model="guid" name="value" />
@@ -33,9 +32,6 @@
     <button @click="copyToClipboard">Copy</button>
     </HorizontalLayout>
   </SectionContainer>
-</VerticalLayout>
-
-
 </template>
 
 <style scoped>
