@@ -1,6 +1,6 @@
 # Tools
 
-[9813a48b-1914-4038-919b-ed1b6bdcff5c](https://tools.mapaille.net/)
+https://tools.mapaille.net/
 
 ## Recommended Development Setup
 
