@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import HeaderView from './components/HeaderView.vue';
-import MainView from './components/MainView.vue';
+import HeaderView from "./components/HeaderView.vue";
+import MainView from "./components/MainView.vue";
 </script>
 
 <template>
@@ -12,13 +12,13 @@ import MainView from './components/MainView.vue';
 :root {
   --color-primary: black;
   --color-secondary: darkblue;
-  --color-light: #F8F8F8;
+  --color-light: #f8f8f8;
 
   --layout-gap: 0.5rem;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 button {
@@ -31,9 +31,9 @@ button {
   }
 }
 
-button, input {
-    font-size: 1rem;
-    padding: 0.3rem;
+button,
+input {
+  font-size: 1rem;
+  padding: 0.3rem;
 }
-
 </style>

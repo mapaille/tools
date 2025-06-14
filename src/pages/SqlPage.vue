@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import SectionContainer from '../components/SectionContainer.vue';
+import SectionContainer from "../components/SectionContainer.vue";
 </script>
 
 <template>
@@ -15,10 +15,11 @@ FROM sys.query_store_query qsq
         ON qsq.query_text_id = qsqt.query_text_id
 WHERE
     qsqt.query_sql_text LIKE '%your query text%';
-  </pre>
+  </pre
+    >
   </SectionContainer>
-<SectionContainer title="How to find unused indexes">
-  <pre wrap>
+  <SectionContainer title="How to find unused indexes">
+    <pre wrap>
 SELECT
     objects.name AS Table_name,
     indexes.name AS Index_name,
@@ -38,9 +39,9 @@ WHERE
     dm_db_index_usage_stats.user_scans = 0
 ORDER BY
     dm_db_index_usage_stats.user_updates DESC;
-  </pre>
-</SectionContainer>
+  </pre
+    >
+  </SectionContainer>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

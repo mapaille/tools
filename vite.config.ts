@@ -1,11 +1,10 @@
-import type { UserConfig } from 'vite'
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
- 
+import type { UserConfig } from "vite";
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [
-    vue()
-  ]
- }) satisfies UserConfig
- 
+export default () => {
+  return defineConfig({
+    plugins: [vue()],
+  }) satisfies UserConfig;
+};

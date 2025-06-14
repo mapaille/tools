@@ -1,28 +1,27 @@
 <script setup lang="ts">
-
 const props = defineProps<{
-  title: string
-}>()
+  title: string;
+}>();
 </script>
 
 <template>
   <section>
-      <h3>{{ props.title }}</h3>
-      <slot></slot>
+    <h3>{{ props.title }}</h3>
+    <slot></slot>
   </section>
 </template>
 
 <style scoped>
-  section {
-    padding: 0.5rem;
-    background-color: var(--color-light);
-    border-width: 0.1rem;
-    border-style: dashed;
-    margin-bottom: 1rem;
+section {
+  padding: 0.5rem;
+  background-color: var(--color-light);
+  border-width: 0.1rem;
+  border-style: dashed;
+  margin-bottom: 1rem;
 
-    h3 {
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
+  h3 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
+}
 </style>

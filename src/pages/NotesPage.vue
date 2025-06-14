@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import NavView from "./NavView.vue";
+import NoteListView from "../components/NoteListView.vue";
 </script>
 
 <template>
-  <header>
-    <NavView />
-  </header>
+  <NoteListView />
 </template>
 
 <style scoped></style>

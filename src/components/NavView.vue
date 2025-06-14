@@ -1,5 +1,4 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <nav>
@@ -7,6 +6,7 @@
     <RouterLink to="/base64">BASE64</RouterLink>
     <RouterLink to="/guid">GUID</RouterLink>
     <RouterLink to="/sql">SQL</RouterLink>
+    <RouterLink to="/notes">NOTES</RouterLink>
   </nav>
 </template>
 

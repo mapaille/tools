@@ -5,9 +5,9 @@
 </template>
 
 <style scoped>
-  div {
-    display: flex;
-    flex-direction: column;
-    gap: var(--layout-gap);
-  }
+div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--layout-gap);
+}
 </style>
