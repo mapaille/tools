@@ -62,18 +62,13 @@ async function submitNote() {
           required
         />
 
-        <button
-          v-bind:readonly="isReadonly"
-          v-bind:disabled="isSaving"
-          button
-          type="submit"
-        >
+        <button :readonly="isReadonly" :disabled="isSaving" type="submit">
           Save
         </button>
 
         <button
           @click.prevent="$router.push({ path: '/notes' })"
-          v-bind:disabled="isSaving"
+          :disabled="isSaving"
         >
           Return
         </button>
