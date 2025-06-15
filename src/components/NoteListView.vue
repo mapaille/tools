@@ -4,6 +4,7 @@ import { NoteResponse } from "../types/noteResponse";
 import { inject, onMounted, ref } from "vue";
 import HorizontalLayout from "./HorizontalLayout.vue";
 import { ApiInterface } from "../api";
+import LoadingSpinner from "./LoadingSpinner.vue";
 
 const api = inject<ApiInterface>("api")!;
 const pageNumber = ref(1);
@@ -30,7 +31,11 @@ async function fetchNotes() {
     <button @click="fetchNotes">Refresh</button>
   </HorizontalLayout>
 
-  <div v-if="notes">
+  <div v-if="loading">
+    <LoadingSpinner />
+  </div>
+
+  <div v-else-if="notes">
     <table>
       <thead>
         <tr>
