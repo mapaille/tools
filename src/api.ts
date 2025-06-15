@@ -4,7 +4,10 @@ import { PaginatedResponse } from "./types/paginatedResponse.js";
 import { UpdateNoteRequest } from "./types/updateNoteRequest.js";
 
 export interface ApiInterface {
-  getNotes(): Promise<PaginatedResponse<NoteResponse>>;
+  getNotes(
+    pageNumber: number,
+    pageSize: number,
+  ): Promise<PaginatedResponse<NoteResponse>>;
   getNote(noteId: string): Promise<NoteResponse>;
   updateNote(noteId: string, request: UpdateNoteRequest): Promise<void>;
   createNote(request: CreateNoteRequest): Promise<NoteResponse>;
@@ -18,8 +21,13 @@ export class Api implements ApiInterface {
     this.API_BASE_URL = `${baseUrl}/notes`;
   }
 
-  async getNotes(): Promise<PaginatedResponse<NoteResponse>> {
-    const response = await fetch(this.API_BASE_URL);
+  async getNotes(
+    pageNumber: number,
+    pageSize: number,
+  ): Promise<PaginatedResponse<NoteResponse>> {
+    const response = await fetch(
+      `${this.API_BASE_URL}?pageNumber=${pageNumber}&pageSize=${pageSize}`,
+    );
     const data = await response.json();
     return data as PaginatedResponse<NoteResponse>;
   }

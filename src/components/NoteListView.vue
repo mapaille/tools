@@ -6,6 +6,8 @@ import HorizontalLayout from "./HorizontalLayout.vue";
 import { ApiInterface } from "../api";
 
 const api = inject<ApiInterface>("api")!;
+const pageNumber = ref(1);
+const pageSize = ref(10);
 const loading = ref(true);
 const notes = ref<PaginatedResponse<NoteResponse>>();
 
@@ -15,7 +17,7 @@ onMounted(async () => {
 
 async function fetchNotes() {
   loading.value = true;
-  notes.value = await api.getNotes();
+  notes.value = await api.getNotes(pageNumber.value, pageSize.value);
   loading.value = false;
 }
 </script>
