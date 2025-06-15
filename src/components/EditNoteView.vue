@@ -14,30 +14,45 @@ const props = defineProps({
 const isLoading = ref(true);
 const isReadonly = ref(false);
 const isSaving = ref(false);
+const errorMessage = ref("");
 const noteText = ref("");
 
 onMounted(async () => {
-  if (props.noteId) {
-    await api.getNote(props.noteId).then((note) => {
+  try {
+    isLoading.value = true;
+    errorMessage.value = "";
+    if (props.noteId) {
+      const note = await api.getNote(props.noteId);
       noteText.value = note.text;
-    });
+    }
+  } catch (error) {
+    console.error("Error loading note:", error);
+    errorMessage.value = "Failed to load note. Please try again.";
+  } finally {
+    isLoading.value = false;
   }
-  isLoading.value = false;
 });
 
 async function submitNote() {
-  isReadonly.value = true;
-  isSaving.value = true;
+  try {
+    errorMessage.value = "";
+    isReadonly.value = true;
+    isSaving.value = true;
 
-  if (props.noteId) {
-    await api.updateNote(props.noteId, { text: noteText.value });
-  } else {
-    await api.createNote({ text: noteText.value });
+    if (props.noteId) {
+      await api.updateNote(props.noteId, { text: noteText.value });
+    } else {
+      await api.createNote({ text: noteText.value });
+    }
+
+    await router.push({ path: "/notes" });
+  } catch (error) {
+    console.error("Error saving note:", error);
+    errorMessage.value = "Failed to save note. Please try again.";
+  } finally {
+    isReadonly.value = false;
+    isSaving.value = false;
   }
-
-  isReadonly.value = false;
-  isSaving.value = false;
-  await router.push({ path: "/notes" });
 }
 </script>
 
@@ -49,6 +64,10 @@ async function submitNote() {
     <LoadingSpinner />
   </div>
   <div v-else>
+    <p v-if="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </p>
+
     <form @submit.prevent="submitNote">
       <HorizontalLayout>
         <label for="noteText">Note Text:</label>
@@ -77,4 +96,9 @@ async function submitNote() {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+</style>
