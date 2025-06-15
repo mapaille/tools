@@ -9,7 +9,7 @@ import LoadingSpinner from "./LoadingSpinner.vue";
 const api = inject<ApiInterface>("api")!;
 const pageNumber = ref(1);
 const pageSize = ref(10);
-const loading = ref(true);
+const isLoading = ref(true);
 const notes = ref<PaginatedResponse<NoteResponse>>();
 
 onMounted(async () => {
@@ -17,9 +17,9 @@ onMounted(async () => {
 });
 
 async function fetchNotes() {
-  loading.value = true;
+  isLoading.value = true;
   notes.value = await api.getNotes(pageNumber.value, pageSize.value);
-  loading.value = false;
+  isLoading.value = false;
 }
 </script>
 
@@ -31,7 +31,7 @@ async function fetchNotes() {
     <button @click="fetchNotes">Refresh</button>
   </HorizontalLayout>
 
-  <div v-if="loading">
+  <div v-if="isLoading">
     <LoadingSpinner />
   </div>
 

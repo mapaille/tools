@@ -11,9 +11,9 @@ const props = defineProps({
   noteId: String,
 });
 
-const loading = ref(true);
-const readonly = ref(false);
-const saving = ref(false);
+const isLoading = ref(true);
+const isReadonly = ref(false);
+const isSaving = ref(false);
 const noteText = ref("");
 
 onMounted(async () => {
@@ -22,12 +22,12 @@ onMounted(async () => {
       noteText.value = note.text;
     });
   }
-  loading.value = false;
+  isLoading.value = false;
 });
 
 async function submitNote() {
-  readonly.value = true;
-  saving.value = true;
+  isReadonly.value = true;
+  isSaving.value = true;
 
   if (props.noteId) {
     await api.updateNote(props.noteId, { text: noteText.value });
@@ -35,8 +35,8 @@ async function submitNote() {
     await api.createNote({ text: noteText.value });
   }
 
-  readonly.value = false;
-  saving.value = false;
+  isReadonly.value = false;
+  isSaving.value = false;
   await router.push({ path: "/notes" });
 }
 </script>
@@ -45,7 +45,7 @@ async function submitNote() {
   <h2 v-if="props.noteId">EDIT NOTE</h2>
   <h2 v-else>NEW NOTE</h2>
 
-  <div v-if="loading">
+  <div v-if="isLoading">
     <LoadingSpinner />
   </div>
   <div v-else>
@@ -57,14 +57,14 @@ async function submitNote() {
           type="text"
           id="noteText"
           v-model="noteText"
-          v-bind:readonly="readonly"
-          v-bind:disabled="saving"
+          v-bind:readonly="isReadonly"
+          v-bind:disabled="isSaving"
           required
         />
 
         <button
-          v-bind:readonly="readonly"
-          v-bind:disabled="saving"
+          v-bind:readonly="isReadonly"
+          v-bind:disabled="isSaving"
           button
           type="submit"
         >
@@ -73,7 +73,7 @@ async function submitNote() {
 
         <button
           @click.prevent="$router.push({ path: '/notes' })"
-          v-bind:disabled="saving"
+          v-bind:disabled="isSaving"
         >
           Return
         </button>
