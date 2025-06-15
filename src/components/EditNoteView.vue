@@ -12,6 +12,8 @@ const props = defineProps({
 });
 
 const loading = ref(true);
+const readonly = ref(false);
+const saving = ref(false);
 const noteText = ref("");
 
 onMounted(async () => {
@@ -24,12 +26,17 @@ onMounted(async () => {
 });
 
 async function submitNote() {
+  readonly.value = true;
+  saving.value = true;
+
   if (props.noteId) {
     await api.updateNote(props.noteId, { text: noteText.value });
   } else {
     await api.createNote({ text: noteText.value });
   }
 
+  readonly.value = false;
+  saving.value = false;
   await router.push({ path: "/notes" });
 }
 </script>
@@ -45,9 +52,29 @@ async function submitNote() {
     <form @submit.prevent="submitNote">
       <HorizontalLayout>
         <label for="noteText">Note Text:</label>
-        <input type="text" id="noteText" v-model="noteText" required />
-        <button type="submit">Save</button>
-        <button @click.prevent="$router.push({ path: '/notes' })">
+
+        <input
+          type="text"
+          id="noteText"
+          v-model="noteText"
+          v-bind:readonly="readonly"
+          v-bind:disabled="saving"
+          required
+        />
+
+        <button
+          v-bind:readonly="readonly"
+          v-bind:disabled="saving"
+          button
+          type="submit"
+        >
+          Save
+        </button>
+
+        <button
+          @click.prevent="$router.push({ path: '/notes' })"
+          v-bind:disabled="saving"
+        >
           Return
         </button>
       </HorizontalLayout>
