@@ -6,14 +6,15 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "outDir": "./src/js",
-    "types": ["vite/client", "vitest/globals"],
+    "types": ["vite/client"],
     "isolatedModules": true,
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    "skipLibCheck": true
   },
-  "include": ["src", "src/**/*", "src/types/**/*", "src/**/*.test.ts"],
-  "exclude": ["**/*.spec.ts"]
+  "include": ["src", "src/**/*", "src/types/**/*"],
+  "exclude": ["**/*.spec.ts", "**/*.test.ts", "**/__tests__/**", "vitest.config.ts", "src/js/**"]
 }
