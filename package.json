@@ -5,13 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "npm run ci && vite build",
+    "build:only": "vue-tsc --noEmit && vite build",
+    "ci": "npm run lint && npm run test:run && vue-tsc --noEmit",
     "preview": "vite preview",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "lint": "oxlint --fix && prettier --write ."
+    "lint": "oxlint --fix && prettier --write .",
+    "lint:check": "oxlint && prettier --check ."
   },
   "dependencies": {
     "vue": "^3.5.14",
