@@ -6,7 +6,7 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "outDir": "./src/js",
-    "types": ["vite/client"],
+    "types": ["vite/client", "vitest/globals"],
     "isolatedModules": true,
     "strict": true,
     "noUnusedLocals": true,
@@ -14,6 +14,6 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "src/**/*", "src/types/**/*"],
+  "include": ["src", "src/**/*", "src/types/**/*", "src/**/*.test.ts"],
   "exclude": ["**/*.spec.ts"]
 }
