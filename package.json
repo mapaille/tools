@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "npm run ci && vite build",
     "build:only": "vue-tsc --noEmit && vite build",
-    "ci": "npm run lint && npm run test:run && vue-tsc --noEmit",
+    "ci": "npm run lint:check && npm run test:run && vue-tsc --noEmit",
     "preview": "vite preview",
     "test": "vitest",
     "test:ui": "vitest --ui",
